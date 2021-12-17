@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://127.0.0.1:5500/Untitled-1.html -->
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type=text/javascript>
+    function Validations() {
+        var email=document.getElementById('txtEmail');
+        var filter=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  
+        if (!filter.test(email.value)) {  
+            alert('Please provide a valid email address');  
+            document.form.UserName.focus();
+            return false;  
+        }
+        var pass=document.getElementById('passId');
+        var reg=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*[!#$%^&*()])(?!.*\s).{8,50}$/;
+        if(!reg.test(pass.value))
+        {
+            alert("password incorrect");
+            document.form.Password.focus();
+        }
+        if(pass.value=="SmartServTest@123"){
+            window.location.replace("chatrs.html");
+        }
+        else{
+            alert("invalid Password");
+            return;
+        }
+        
+    }
+    function sendmail(){
+        window.location.href = "mailto:support@smartserv.io?subject=Reset-Password&body=Please Reset my Password";
+
+    }
+    </script>
+</head>
+    <body>
+        
+        <div class="container">
+            <form id="login" action="" name="form">
+                <img src="smartserv_logo.png" alt="" style="width: 300px; height: 125px; padding: 30px;">
+                <br><br>
+
+                <input type="text" id="txtEmail" class="box" name="UserName" placeholder=" Username" style=" font-size: 16px;">
+                <br></br>
+                <input type="password" id="passId" class="box" name="Password" placeholder=" Password" style=" font-size: 16px;">
+                <br/><br/><br/>
+                <input type="button" class="box" name="Submit" value="Login" style="border-radius: 10px; background-color: #71BE58; color: white; " onclick="Validations()">
+                <br><br>
+                <a href="" style="color: gray; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" onclick="sendmail()">Forgot your password?</a>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="CSS/Chart.css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<body>
+    <h3>Company Metrics</h3>
+        <div class="Metrics">
+            <div class="cards">
+               <font color=#48be9b size=5px>$406411.29</font> 
+                <br><br>Total Revenue
+            </div>
+            <div class="cards">
+                <font size=5px>$626</font>
+                <br><br>Total Jobs Avg
+             </div>
+            <div class="cards"><font size=5px>655</font><br><br>Tickets Created</div>
+            <div class="cards"><font size=5px>735</font><br><br>Tickets Scheduled</div>
+            <div class="cards"><font color=red size=5px>$110448.8</font><br><br>Outstanding Amount</div>
+            <div class="cards"><font size=5px>105</font><br><br>Memberships Sold</div>
+            <div class="cards"><font size=5px>436</font><br><br>Jobs Completed</div>
+            <div class="cards"><font size=5px>65</font><br><br>Total Canceled</div>
+        </div>
+        <div class="graph">
+          <div class="graph1">
+              <br>
+              <h3>Revenue By Job Location<h3>
+              <canvas
+                id="myChart"
+                class="mt-3"
+                style="width: 100%; background-color: #fff"
+              ></canvas>
+            </div>
+            <div class="graph1">
+              <br>
+              <h3>Revenue By Job Type<h3>
+              <canvas
+                id="myChart2"
+                class="mt-3"
+                style="width: 100%; background-color: #fff"
+              ></canvas>
+            </div>
+        </div>
+            <script>
+                var xValues = [
+                  "Everett",
+                  "Seattle",
+                  "Lynwood",
+                  "Bothell",
+                  "Mukilteo",
+                  "Edmonds",
+                ];
+                var yValues = [78000, 75000, 49000, 42000, 41000, 34000];
+                var barColors = [
+                  "#48be9b",
+                  "#48be9b",
+                  "#48be9b",
+                  "#48be9b",
+                  "#48be9b",
+                  "#48be9b",
+                ];
+        
+                new Chart("myChart", {
+                  type: "horizontalBar",
+                  data: {
+                    labels: xValues,
+                    datasets: [
+                      {
+                        backgroundColor: barColors,
+                        data: yValues,
+                      },
+                    ],
+                  },
+                  options: {
+                    legend: { display: false },
+                    title: {
+                      display: true,
+                      
+                    },
+                    scales: {
+                      xAxes: [{ ticks: { min: 5000, max: 90000 } }],
+                    },
+                  },
+                });
+            </script>
+            <script>
+                var xValues = [
+                  "Everett",
+                  "Seattle",
+                  "Lynwood",
+                  "Bothell",
+                  "Mukilteo",
+                  "Edmonds",
+                ];
+                var yValues = [78000, 75000, 49000, 42000, 41000, 34000];
+                var barColors = [
+                  "#48be9b",
+                  "#48be9b",
+                  "#48be9b",
+                  "#48be9b",
+                  "#48be9b",
+                  "#48be9b",
+                ];
+        
+                new Chart("myChart2", {
+                  type: "horizontalBar",
+                  data: {
+                    labels: xValues,
+                    datasets: [
+                      {
+                        backgroundColor: barColors,
+                        data: yValues,
+                      },
+                    ],
+                  },
+                  options: {
+                    legend: { display: false },
+                    title: {
+                      display: true,
+                      
+                    },
+                    scales: {
+                      xAxes: [{ ticks: { min: 5000, max: 90000 } }],
+                    },
+                  },
+                });
+              </script>
+        
+   
+</body>
+</html>
